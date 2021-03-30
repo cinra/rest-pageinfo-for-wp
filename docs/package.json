@@ -1,0 +1,64 @@
+{
+  "name": "@pageinfo/docs",
+  "description": "",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cinra/wp-rest-pageinfo.git"
+  },
+  "scripts": {
+    "api:build": "aspida",
+    "lint:ts": "./node_modules/.bin/eslint 'src/**/*.ts'",
+    "lint:fix": "yarn lint:ts --fix",
+    "build": "aspida --build && ./node_modules/.bin/tsc --build tsconfig.json"
+  },
+  "keywords": [
+    "wp-rest",
+    "api",
+    "pageinfo",
+    "wp-rest-pageinfo"
+  ],
+  "contributors": [
+    {
+      "name": "uuki",
+      "email": "uuki.dev@gmail.com"
+    },
+    {
+      "name": "HirohitoHiga",
+      "email": "h_higa@cinra.net"
+    }
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/parser": "^4.20.0",
+    "aspida": "^1.6.3",
+    "eslint": "^7.23.0",
+    "eslint-plugin-aspida": "^0.0.2",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "gitDir": "../",
+    "subTaskConcurrency": 1,
+    "src/**/*.{js,ts}": [
+      "./node_modules/.bin/eslint --fix",
+      "git add"
+    ],
+    "ignore": [
+      "dist/**/*"
+    ]
+  }
+}

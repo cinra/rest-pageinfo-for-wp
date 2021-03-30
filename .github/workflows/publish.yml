@@ -1,0 +1,41 @@
+name: publish
+
+env:
+  CI: true
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+          registry-url: 'https://npm.pkg.github.com'
+      - name: change dir
+        run: cd docs
+      - name: install dependencies
+        run: yarn --frozen-lockfile
+      - name: build
+        run: yarn build
+      - name: publish
+        run: |
+          npx can-npm-publish --verbose && npm publish || echo "Does not publish"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: package-version-to-git-tag
+        uses: pkgdeps/action-package-version-to-git-tag@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_repo: ${{ github.repository }}
+          git_commit_sha: ${{ github.sha }}
+          git_tag_prefix: 'v'

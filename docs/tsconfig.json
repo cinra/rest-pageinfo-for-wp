@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "outDir": "./dist",
+    "declaration": true,
+    "strict": true,
+    "allowJs": true,
+    "checkJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "target": "es6",
+    "module": "commonjs",
+    "lib": [
+      "esnext",
+      "dom"
+    ]
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

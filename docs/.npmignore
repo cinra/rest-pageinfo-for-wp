@@ -1,0 +1,21 @@
+# Source
+##########################
+src
+
+# Development
+##########################
+.editorconfig
+.eslintrc
+.prettierignore
+.prettierrc
+.nvmrc
+tsconfig.json
+tsconfig.eslint.json
+
+# Node
+##########################
+node_modules
+
+# OS
+##########################
+.DS_Store

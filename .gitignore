@@ -1,0 +1,24 @@
+# Node
+*.gz
+*.log
+logs
+npm-debug.log*
+yarn-error.log*
+node_modules
+
+## macOS(OS X)
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+## Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+## remove wp plugins
+plugins/akismet
+plugins/hello.php
+plugins/index.php
