@@ -2,8 +2,6 @@
 
 Easy get page, post and custom post inforamtion for frontend develop!
 
-== Description ==
-
 ## ABOUT
 
 This plug-in was developed for the purpose of improving the efficiency of component sorting by page type in SPA development on the frontend.
@@ -68,12 +66,12 @@ http://127.0.0.1:8080/wp-admin
 
 ### CHANGE LOG
 
-== Changelog ==
+#### Changelog
 
 = 1.0.0 =
 * Publish plugin!
 
-== Upgrade Notice ==
+#### Upgrade Notice
 
 = 1.0.0 =
 * Publish plugin!
