@@ -1,16 +1,16 @@
 <?php
 /*
-Plugin Name: WP REST PAGEINFO
+Plugin Name: REST PAGEINFO FOR WP 
 Plugin URI: https://github.com/cinra/wp-rest-pageinfo
 Description: Get page infomation for spa component control by frontend. 
 Author: Hirohito Higa / Aoki Yuichi
 Version: 1.0.0
 Author URI: https://www.cinra.co.jp
 Text Domain: cinra
-License: MIT
+License: GPLv2 or later
 */
 
-class WpRestPageinfo
+class RestPageinfoForWP
 {
   private $api_access_point = '/page-info';
 
@@ -19,7 +19,6 @@ class WpRestPageinfo
     $this->set_api();
     $this->set_wp_initialize();
     $this->set_element_response_header();
-    $this->set_preview();
   }
 
   private function set_api()
@@ -33,7 +32,7 @@ class WpRestPageinfo
 
     function response_get_page_info(WP_REST_Request $request)
     {
-      return rest_ensure_response(WpRestPageinfo::get_page_info($request));
+      return rest_ensure_response(RestPageinfoForWP::get_page_info($request));
     }
   }
 
@@ -64,15 +63,6 @@ class WpRestPageinfo
       }
       return $wp_rest_server;
     }, 10, 1);
-  }
-
-  private function set_preview()
-  {
-    add_filter('rest_prepare_revision', function ($response, $post) {
-      $data = $response->get_data();
-      $data['acf'] = get_fields($post->ID);
-      return rest_ensure_response($data);
-    }, 10, 2);
   }
 
   public static function get_page_info($request = null)
@@ -151,7 +141,7 @@ class WpRestPageinfo
       $info['is_404'] = true;
     }
 
-    $info = apply_filters('filter_wp_rest_pageinfo', $info, $request);
+    $info = apply_filters('filter_rest_pageinfo_for_wp', $info, $request);
 
     if (isset($_GET['preview']) && $_GET['preview']) {
       $preview_revisions = isset($info['the_id']) ? wp_get_post_revisions($info['the_id']) : "";
@@ -167,8 +157,8 @@ class WpRestPageinfo
 
   public static function init()
   {
-    return new WpRestPageinfo;
+    return new RestPageinfoForWP;
   }
 }
 
-WpRestPageinfo::init();
+RestPageinfoForWP::init();

@@ -1,10 +1,20 @@
-# REST PAGEINFO WP
+=== REST PAGEINFO FOR WP ===
+Contributors: higayo 
+Tags: api, development
+Requires at least: 4.7
+Tested up to: 5.7
+Stable tag: 1.0.0
+Requires PHP: 7.2
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Easy get page, post and custom post inforamtion for frontend develop!
 
+== Description ==
+
 ## ABOUT
 
-This plug-in was developed for the purpose of improving the efficiency of component sorting by page type in SPA development on the frontend.
+"REST PAGEINFO FOR WP" was developed for the purpose of improving the efficiency of component sorting by page type in SPA development on the frontend.
 When this plugin is enabled, the page status is returned using the URI as a key.
 
 ## API
@@ -48,30 +58,14 @@ If you want get preview post, need jwt plugin for check wp logined.
 
 ## You can easy check it by docker
 
-### run docker 
-```sh
-$ docker-compose up -d
-$ docker exec -it wprestpageinfo_db bash -c "mysql -h localhost -u exampleuser -pexamplepass exampledb < /sql/sample.sql"
-```
-Sampel post  
-http://127.0.0.1:8080/wp-json/wp/v2/page-info/post/hello-world
+https://github.com/cinra/wp-rest-pageinfo#you-can-easy-check-it-by-docker
 
-### Access wp
-
-http://127.0.0.1:8080/wp-admin
-
-|User name|Password|
-|:-|:-|
-|admin|admin|
-
-### CHANGE LOG
-
-#### Changelog
+== Changelog ==
 
 = 1.0.0 =
 * Publish plugin!
 
-#### Upgrade Notice
+== Upgrade Notice ==
 
 = 1.0.0 =
 * Publish plugin!
