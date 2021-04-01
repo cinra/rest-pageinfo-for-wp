@@ -1,4 +1,4 @@
-# WP REST PAGEINFO
+# REST PAGEINFO WP
 
 Easy get page, post and custom post inforamtion for frontend develop!
 
