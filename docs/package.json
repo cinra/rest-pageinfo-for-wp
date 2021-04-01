@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/cinra/wp-rest-pageinfo.git"
+    "url": "git@github.com:cinra/rest-pageinfo-for-wp.git"
   },
   "scripts": {
     "api:build": "aspida",
