@@ -3,9 +3,6 @@
 This plug-in was developed for the purpose of improving the efficiency of component sorting by page type in SPA development on the front end.
 When this plugin is enabled, the page status is returned using the URI as a key.
 
-> 本プラグインはフロントエンドでのSPA開発におけるページタイプによるコンポーネント出し分けの効率化を目的に開発しました。
-本プラグインを有効化するとURIをキーにページの状態を返します。
-
 ## API
 
 ### Endpoint
@@ -40,6 +37,10 @@ Page and Custom post use only {URI}, but default post(archive) needs `post`.
 ## Customize response data
 
 If you customize response data(ex: breadcrumbs, meta desciption, etc...), please hook to `apply_filters('filter_wp_rest_pageinfo', $info, $request)`.
+
+## About Preview post
+
+If you want get preview post, need jwt plugin for check wp logined.
 
 ## You can easy check it by docker
 
