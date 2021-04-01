@@ -19,7 +19,6 @@ class WpRestPageinfo
     $this->set_api();
     $this->set_wp_initialize();
     $this->set_element_response_header();
-    $this->set_preview();
   }
 
   private function set_api()
@@ -64,15 +63,6 @@ class WpRestPageinfo
       }
       return $wp_rest_server;
     }, 10, 1);
-  }
-
-  private function set_preview()
-  {
-    add_filter('rest_prepare_revision', function ($response, $post) {
-      $data = $response->get_data();
-      $data['acf'] = get_fields($post->ID);
-      return rest_ensure_response($data);
-    }, 10, 2);
   }
 
   public static function get_page_info($request = null)
