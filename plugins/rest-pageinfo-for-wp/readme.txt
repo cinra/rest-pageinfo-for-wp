@@ -58,7 +58,7 @@ If you want get preview post, need jwt plugin for check wp logined.
 
 ## You can easy check it by docker
 
-https://github.com/cinra/wp-rest-pageinfo#you-can-easy-check-it-by-docker
+https://github.com/cinra/rest-pageinfo-for-wp#you-can-easy-check-it-by-docker
 
 == Changelog ==
 
