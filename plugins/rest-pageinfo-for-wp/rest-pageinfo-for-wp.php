@@ -57,7 +57,7 @@ class RestPageinfoForWP
         $api_target_str = explode('/', $match[1]);
 
         if (empty($api_target_str[1])) {
-          $current = isset($_GET['page']) ? $_GET['page'] : 1;
+          $current = isset($_GET['page']) ? esc_html($_GET['page']) : 1;
           header('X-WP-CurrentPage: ' . $current);
         }
       }
